@@ -1,0 +1,927 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
+Exception in thread "DisconnectableInputStream source reader" org.gradle.api.UncheckedIOException: java.io.IOException: Bad file descriptor
+	at org.gradle.internal.UncheckedException.throwAsUncheckedException(UncheckedException.java:62)
+	at org.gradle.internal.UncheckedException.throwAsUncheckedException(UncheckedException.java:41)
+	at org.gradle.util.internal.DisconnectableInputStream$1.run(DisconnectableInputStream.java:127)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.io.IOException: Bad file descriptor
+	at java.base/java.io.FileInputStream.readBytes(Native Method)
+	at java.base/java.io.FileInputStream.read(FileInputStream.java:279)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:290)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:351)
+	at org.gradle.util.internal.DisconnectableInputStream$1.run(DisconnectableInputStream.java:98)
+	... 1 more
+Configuration on demand is an incubating feature.
+
+> Configure project :app
+WARNING:The option setting 'android.jetifier.ignorelist=bundletool-1.14.1.jar,org.eclipse.jdt.core-3.28.0.jar,koltin-compiler-embeddable-1.6.0.jar' is experimental.
+Checking the license for package Android SDK Build-Tools 33 in /home/nieuwmijnleven/workspace/android-sdk/licenses
+License for package Android SDK Build-Tools 33 accepted.
+Preparing "Install Android SDK Build-Tools 33 (revision: 33.0.0)".
+"Install Android SDK Build-Tools 33 (revision: 33.0.0)" ready.
+Installing Android SDK Build-Tools 33 in /home/nieuwmijnleven/workspace/android-sdk/build-tools/33.0.0
+"Install Android SDK Build-Tools 33 (revision: 33.0.0)" complete.
+"Install Android SDK Build-Tools 33 (revision: 33.0.0)" finished.
+Configuration 'spotless865455342' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+
+> Task :android-stubs:compileJava
+> Task :eclipse-standalone:compileJava
+> Task :javac:compileJava NO-SOURCE
+> Task :javapoet:compileKotlin NO-SOURCE
+> Task :common:compileKotlin
+> Task :common:compileJava
+> Task :javapoet:compileJava
+> Task :jaxp:compileJava NO-SOURCE
+> Task :apksigner:compileJava
+> Task :logging:compileJava
+> Task :manifmerger:compileJava NO-SOURCE
+> Task :viewbinding-lib:compileKotlin NO-SOURCE
+> Task :viewbinding-lib:compileJava NO-SOURCE
+> Task :language-api:compileJava
+> Task :fileeditor-api:compileJava
+> Task :actions-api:processResources NO-SOURCE
+> Task :spotlessInternalRegisterDependencies
+> Task :actions-api:spotlessJava
+> Task :actions-api:spotlessJavaCheck
+> Task :actions-api:spotlessCheck
+> Task :actions-api:processTestResources NO-SOURCE
+> Task :apksigner:processResources NO-SOURCE
+> Task :apksigner:classes
+> Task :apksigner:jar
+> Task :build-logic:processResources NO-SOURCE
+> Task :common:processResources NO-SOURCE
+> Task :common:classes
+> Task :common:jar
+> Task :common:inspectClassesForKotlinIC
+> Task :eclipse-standalone:processResources NO-SOURCE
+> Task :eclipse-standalone:classes
+> Task :eclipse-standalone:jar
+> Task :editor-api:processResources NO-SOURCE
+> Task :fileeditor-api:processResources NO-SOURCE
+> Task :fileeditor-api:classes
+> Task :fileeditor-api:jar
+> Task :javac:processResources NO-SOURCE
+> Task :javac:classes UP-TO-DATE
+> Task :javac:jar
+> Task :javapoet:processResources NO-SOURCE
+> Task :javapoet:classes
+> Task :javapoet:jar
+> Task :javapoet:inspectClassesForKotlinIC
+> Task :jaxp:processResources NO-SOURCE
+> Task :jaxp:classes UP-TO-DATE
+> Task :jaxp:jar
+> Task :kotlinc:processResources
+> Task :language-api:processResources NO-SOURCE
+> Task :language-api:classes
+> Task :language-api:jar
+> Task :logging:processResources NO-SOURCE
+> Task :logging:classes
+> Task :logging:jar
+> Task :manifmerger:processResources NO-SOURCE
+> Task :manifmerger:classes UP-TO-DATE
+> Task :manifmerger:jar
+> Task :project:processResources NO-SOURCE
+> Task :viewbinding-lib:processResources NO-SOURCE
+> Task :viewbinding-lib:classes UP-TO-DATE
+> Task :viewbinding-lib:jar
+> Task :viewbinding-lib:inspectClassesForKotlinIC
+> Task :xml-repository:processResources NO-SOURCE
+> Task :android-stubs:processResources NO-SOURCE
+> Task :android-stubs:classes
+> Task :android-stubs:jar
+> Task :android-stubs:assemble
+> Task :android-stubs:spotlessJava
+> Task :android-stubs:spotlessJavaCheck
+> Task :android-stubs:spotlessCheck
+> Task :android-stubs:compileTestJava NO-SOURCE
+> Task :android-stubs:processTestResources NO-SOURCE
+> Task :android-stubs:testClasses UP-TO-DATE
+> Task :android-stubs:test NO-SOURCE
+> Task :android-stubs:check
+> Task :android-stubs:build
+> Task :apksigner:assemble
+> Task :apksigner:spotlessJava
+> Task :apksigner:spotlessJavaCheck
+> Task :apksigner:spotlessCheck
+> Task :apksigner:compileTestJava NO-SOURCE
+> Task :apksigner:processTestResources NO-SOURCE
+> Task :apksigner:testClasses UP-TO-DATE
+> Task :apksigner:test NO-SOURCE
+> Task :apksigner:check
+> Task :apksigner:build
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :google-java-format:compileJava NO-SOURCE
+> Task :google-java-format:processResources NO-SOURCE
+> Task :google-java-format:classes UP-TO-DATE
+> Task :google-java-format:jar
+> Task :eclipse-formatter:compileJava
+> Task :eclipse-formatter:processResources NO-SOURCE
+> Task :eclipse-formatter:classes
+> Task :eclipse-formatter:jar
+> Task :code-editor:preBuild UP-TO-DATE
+> Task :code-editor:preDebugBuild UP-TO-DATE
+> Task :completion-api:preBuild UP-TO-DATE
+> Task :completion-api:preDebugBuild UP-TO-DATE
+> Task :completion-api:compileDebugAidl NO-SOURCE
+> Task :java-completion:preBuild UP-TO-DATE
+> Task :java-completion:preDebugBuild UP-TO-DATE
+> Task :kotlin-completion:preBuild UP-TO-DATE
+> Task :kotlin-completion:preDebugBuild UP-TO-DATE
+> Task :kotlin-completion:compileDebugAidl NO-SOURCE
+> Task :treeview:preBuild UP-TO-DATE
+> Task :treeview:preDebugBuild UP-TO-DATE
+> Task :treeview:compileDebugAidl NO-SOURCE
+> Task :java-completion:compileDebugAidl NO-SOURCE
+> Task :code-editor:compileDebugAidl NO-SOURCE
+> Task :dependency-resolver:preBuild UP-TO-DATE
+> Task :dependency-resolver:preDebugBuild UP-TO-DATE
+> Task :dependency-resolver:compileDebugAidl NO-SOURCE
+> Task :appcompat-widgets:preBuild UP-TO-DATE
+> Task :appcompat-widgets:preDebugBuild UP-TO-DATE
+> Task :proteus-core:preBuild UP-TO-DATE
+> Task :proteus-core:preDebugBuild UP-TO-DATE
+> Task :proteus-core:compileDebugAidl NO-SOURCE
+> Task :appcompat-widgets:compileDebugAidl NO-SOURCE
+> Task :cardview:preBuild UP-TO-DATE
+> Task :cardview:preDebugBuild UP-TO-DATE
+> Task :cardview:compileDebugAidl NO-SOURCE
+> Task :constraintlayout:preBuild UP-TO-DATE
+> Task :constraintlayout:preDebugBuild UP-TO-DATE
+> Task :constraintlayout:compileDebugAidl NO-SOURCE
+> Task :layout-preview:preBuild UP-TO-DATE
+> Task :layout-preview:preDebugBuild UP-TO-DATE
+> Task :vector-parser:preBuild UP-TO-DATE
+> Task :vector-parser:preDebugBuild UP-TO-DATE
+> Task :vector-parser:compileDebugAidl NO-SOURCE
+> Task :xml-completion:preBuild UP-TO-DATE
+> Task :xml-completion:preDebugBuild UP-TO-DATE
+> Task :xml-completion:compileDebugAidl NO-SOURCE
+> Task :layout-preview:compileDebugAidl NO-SOURCE
+> Task :lint:preBuild UP-TO-DATE
+> Task :lint:preDebugBuild UP-TO-DATE
+> Task :lint:compileDebugAidl NO-SOURCE
+> Task :viewbinding-inject:preBuild UP-TO-DATE
+> Task :viewbinding-inject:preDebugBuild UP-TO-DATE
+> Task :viewbinding-inject:compileDebugAidl NO-SOURCE
+> Task :app:compileDebugAidl NO-SOURCE
+> Task :code-editor:packageDebugRenderscript NO-SOURCE
+> Task :completion-api:packageDebugRenderscript NO-SOURCE
+> Task :dependency-resolver:packageDebugRenderscript NO-SOURCE
+> Task :java-completion:packageDebugRenderscript NO-SOURCE
+> Task :kotlin-completion:packageDebugRenderscript NO-SOURCE
+> Task :layout-preview:packageDebugRenderscript NO-SOURCE
+> Task :lint:packageDebugRenderscript NO-SOURCE
+> Task :proteus-core:packageDebugRenderscript NO-SOURCE
+> Task :treeview:packageDebugRenderscript NO-SOURCE
+> Task :viewbinding-inject:packageDebugRenderscript NO-SOURCE
+> Task :xml-completion:packageDebugRenderscript NO-SOURCE
+> Task :app:compileDebugRenderscript NO-SOURCE
+
+> Task :kotlinc:compileKotlin
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlinc/src/main/java/org/jetbrains/kotlin/cli/jvm/plugins/ServiceLoaderLite.kt: (53, 22): 'newInstance(): T!' is deprecated. Deprecated in Java
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlinc/src/main/java/org/jetbrains/kotlin/cli/jvm/plugins/ServiceLoaderLite.kt: (54, 17): Unsafe use of a nullable receiver of type MutableList<Service>
+
+> Task :kotlinc:compileJava
+warning: unknown enum constant Capitalization.Title
+  reason: class file for org.jetbrains.annotations.Nls$Capitalization not found
+warning: unknown enum constant Capitalization.Title
+Note: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlinc/src/main/java/org/jetbrains/kotlin/com/intellij/core/CoreApplicationEnvironment.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+2 warnings
+
+> Task :project:compileJava
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :xml-repository:compileJava
+Note: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/xml-repository/src/main/java/com/tyron/xml/completion/repository/ResourceRepository.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:dataBindingMergeDependencyArtifactsDebug
+
+> Task :build-logic:compileKotlin
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/build-logic/src/main/java/com/tyron/builder/compiler/viewbinding/GenerateViewBindingTask.kt: (113, 28): Unsafe use of a nullable receiver of type File?
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/build-logic/src/main/java/com/tyron/builder/compiler/viewbinding/GenerateViewBindingTask.kt: (113, 62): Unsafe use of a nullable receiver of type File?
+
+> Task :build-logic:compileJava
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :editor-api:compileJava
+> Task :actions-api:compileJava
+> Task :actions-api:classes
+> Task :actions-api:jar
+> Task :actions-api:assemble
+> Task :actions-api:compileTestJava
+> Task :actions-api:testClasses
+> Task :build-logic:classes
+> Task :build-logic:jar
+> Task :build-logic:inspectClassesForKotlinIC
+> Task :editor-api:classes
+> Task :editor-api:jar
+> Task :kotlinc:classes
+> Task :kotlinc:jar
+> Task :kotlinc:inspectClassesForKotlinIC
+> Task :project:classes
+> Task :project:jar
+> Task :xml-repository:classes
+> Task :xml-repository:jar
+> Task :actions-api:test
+> Task :actions-api:check
+> Task :actions-api:build
+> Task :app:generateDebugResValues
+> Task :app:generateDebugResources
+> Task :appcompat-widgets:compileDebugRenderscript NO-SOURCE
+> Task :appcompat-widgets:generateDebugResValues
+> Task :appcompat-widgets:generateDebugResources
+> Task :cardview:compileDebugRenderscript NO-SOURCE
+> Task :cardview:generateDebugResValues
+> Task :cardview:generateDebugResources
+> Task :cardview:packageDebugResources
+> Task :code-editor:compileDebugRenderscript NO-SOURCE
+> Task :code-editor:generateDebugResValues
+> Task :code-editor:generateDebugResources
+> Task :appcompat-widgets:packageDebugResources
+> Task :completion-api:compileDebugRenderscript NO-SOURCE
+> Task :completion-api:generateDebugResValues
+> Task :completion-api:generateDebugResources
+> Task :completion-api:packageDebugResources
+> Task :constraintlayout:compileDebugRenderscript NO-SOURCE
+> Task :constraintlayout:generateDebugResValues
+> Task :constraintlayout:generateDebugResources
+> Task :constraintlayout:packageDebugResources
+> Task :dependency-resolver:compileDebugRenderscript NO-SOURCE
+> Task :dependency-resolver:generateDebugResValues
+> Task :dependency-resolver:generateDebugResources
+> Task :dependency-resolver:packageDebugResources
+> Task :java-completion:compileDebugRenderscript NO-SOURCE
+> Task :java-completion:generateDebugResValues
+> Task :java-completion:generateDebugResources
+> Task :java-completion:packageDebugResources
+> Task :kotlin-completion:compileDebugRenderscript NO-SOURCE
+> Task :kotlin-completion:generateDebugResValues
+> Task :kotlin-completion:generateDebugResources
+> Task :code-editor:packageDebugResources
+> Task :kotlin-completion:packageDebugResources
+> Task :appcompat-widgets:packageDebugRenderscript NO-SOURCE
+> Task :cardview:packageDebugRenderscript NO-SOURCE
+> Task :constraintlayout:packageDebugRenderscript NO-SOURCE
+> Task :layout-preview:generateDebugResValues
+> Task :vector-parser:packageDebugRenderscript NO-SOURCE
+> Task :lint:compileDebugRenderscript NO-SOURCE
+> Task :layout-preview:compileDebugRenderscript NO-SOURCE
+> Task :layout-preview:generateDebugResources
+> Task :lint:generateDebugResValues
+> Task :lint:generateDebugResources
+> Task :layout-preview:packageDebugResources
+> Task :proteus-core:compileDebugRenderscript NO-SOURCE
+> Task :proteus-core:generateDebugResValues
+> Task :proteus-core:generateDebugResources
+> Task :proteus-core:packageDebugResources
+> Task :treeview:compileDebugRenderscript NO-SOURCE
+> Task :treeview:generateDebugResValues
+> Task :treeview:generateDebugResources
+> Task :lint:packageDebugResources
+> Task :vector-parser:compileDebugRenderscript NO-SOURCE
+> Task :vector-parser:generateDebugResValues
+> Task :vector-parser:generateDebugResources
+> Task :treeview:packageDebugResources
+> Task :viewbinding-inject:compileDebugRenderscript NO-SOURCE
+> Task :viewbinding-inject:generateDebugResValues
+> Task :viewbinding-inject:generateDebugResources
+> Task :vector-parser:packageDebugResources
+> Task :xml-completion:compileDebugRenderscript NO-SOURCE
+> Task :xml-completion:generateDebugResValues
+> Task :xml-completion:generateDebugResources
+> Task :viewbinding-inject:packageDebugResources
+> Task :xml-completion:packageDebugResources
+> Task :app:generateDebugBuildConfig
+> Task :appcompat-widgets:writeDebugAarMetadata
+> Task :cardview:writeDebugAarMetadata
+> Task :code-editor:writeDebugAarMetadata
+> Task :completion-api:writeDebugAarMetadata
+> Task :constraintlayout:writeDebugAarMetadata
+> Task :dependency-resolver:writeDebugAarMetadata
+> Task :java-completion:writeDebugAarMetadata
+> Task :kotlin-completion:writeDebugAarMetadata
+> Task :layout-preview:writeDebugAarMetadata
+> Task :lint:writeDebugAarMetadata
+> Task :proteus-core:writeDebugAarMetadata
+> Task :treeview:writeDebugAarMetadata
+> Task :vector-parser:writeDebugAarMetadata
+> Task :viewbinding-inject:writeDebugAarMetadata
+> Task :xml-completion:writeDebugAarMetadata
+> Task :appcompat-widgets:extractDeepLinksDebug
+
+> Task :appcompat-widgets:processDebugManifest
+package="com.tyron.layout.appcompat" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/appcompat-widgets/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :cardview:extractDeepLinksDebug
+
+> Task :cardview:processDebugManifest
+package="com.tyron.layout.cardview" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/cardview/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :code-editor:extractDeepLinksDebug
+
+> Task :code-editor:processDebugManifest
+package="io.github.rosemoe.sora2" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/code-editor/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :completion-api:extractDeepLinksDebug
+
+> Task :completion-api:processDebugManifest
+package="com.tyron.completion" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/completion-api/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :constraintlayout:extractDeepLinksDebug
+
+> Task :constraintlayout:processDebugManifest
+package="com.tyron.layout.constraintlayout" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/constraintlayout/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :dependency-resolver:extractDeepLinksDebug
+
+> Task :dependency-resolver:processDebugManifest
+package="com.tyron.resolver" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/dependency-resolver/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :java-completion:extractDeepLinksDebug
+
+> Task :java-completion:processDebugManifest
+package="com.tyron.completion.java" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/java-completion/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :kotlin-completion:extractDeepLinksDebug
+
+> Task :kotlin-completion:processDebugManifest
+package="com.tyron.kotlin_completion" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :layout-preview:extractDeepLinksDebug
+
+> Task :layout-preview:processDebugManifest
+package="com.tyron.layoutpreview" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/layout-preview/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :lint:extractDeepLinksDebug
+
+> Task :lint:processDebugManifest
+package="com.tyron.lint" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/lint/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :proteus-core:extractDeepLinksDebug
+
+> Task :proteus-core:processDebugManifest
+package="com.flipkart.android.proteus" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/proteus-core/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :treeview:extractDeepLinksDebug
+
+> Task :treeview:processDebugManifest
+package="com.tyron.ui.treeview" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/treeview/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :vector-parser:extractDeepLinksDebug
+
+> Task :vector-parser:processDebugManifest
+package="com.tyron.vectorparser" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/vector-parser/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :viewbinding-inject:extractDeepLinksDebug
+
+> Task :viewbinding-inject:processDebugManifest
+package="com.tyron.viewbinding.task" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/viewbinding-inject/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :xml-completion:extractDeepLinksDebug
+
+> Task :xml-completion:processDebugManifest
+package="com.tyron.completion.xml" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/xml-completion/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :appcompat-widgets:compileDebugLibraryResources
+> Task :appcompat-widgets:parseDebugLocalResources
+> Task :proteus-core:parseDebugLocalResources
+> Task :proteus-core:generateDebugRFile
+> Task :appcompat-widgets:generateDebugRFile
+> Task :cardview:compileDebugLibraryResources
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+
+> Task :app:processDebugMainManifest
+package="com.tyron.code" found in source AndroidManifest.xml: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :app:processDebugManifest
+> Task :app:processDebugManifestForPackage
+> Task :app:mergeDebugResources
+> Task :cardview:parseDebugLocalResources
+> Task :cardview:generateDebugRFile
+> Task :code-editor:compileDebugLibraryResources
+> Task :code-editor:parseDebugLocalResources
+> Task :completion-api:parseDebugLocalResources
+> Task :completion-api:generateDebugRFile
+> Task :app:dataBindingGenBaseClassesDebug
+> Task :kotlin-completion:parseDebugLocalResources
+> Task :java-completion:parseDebugLocalResources
+> Task :treeview:parseDebugLocalResources
+> Task :kotlin-completion:generateDebugRFile
+> Task :completion-api:compileDebugLibraryResources
+> Task :constraintlayout:compileDebugLibraryResources
+> Task :constraintlayout:parseDebugLocalResources
+> Task :treeview:generateDebugRFile
+> Task :java-completion:generateDebugRFile
+> Task :constraintlayout:generateDebugRFile
+> Task :dependency-resolver:compileDebugLibraryResources
+> Task :dependency-resolver:parseDebugLocalResources
+> Task :dependency-resolver:generateDebugRFile
+> Task :code-editor:generateDebugRFile
+> Task :kotlin-completion:compileDebugLibraryResources
+> Task :layout-preview:compileDebugLibraryResources
+> Task :java-completion:compileDebugLibraryResources
+> Task :vector-parser:parseDebugLocalResources
+> Task :layout-preview:parseDebugLocalResources
+> Task :xml-completion:parseDebugLocalResources
+> Task :vector-parser:generateDebugRFile
+> Task :lint:compileDebugLibraryResources
+> Task :lint:parseDebugLocalResources
+> Task :xml-completion:generateDebugRFile
+> Task :layout-preview:generateDebugRFile
+> Task :proteus-core:compileDebugLibraryResources
+> Task :treeview:compileDebugLibraryResources
+> Task :vector-parser:compileDebugLibraryResources
+> Task :viewbinding-inject:compileDebugLibraryResources
+> Task :viewbinding-inject:parseDebugLocalResources
+> Task :viewbinding-inject:generateDebugRFile
+> Task :xml-completion:compileDebugLibraryResources
+> Task :code-editor:generateDebugBuildConfig
+> Task :code-editor:javaPreCompileDebug
+> Task :completion-api:generateDebugBuildConfig
+> Task :completion-api:javaPreCompileDebug
+> Task :lint:generateDebugRFile
+
+> Task :completion-api:compileDebugJavaWithJavac
+Note: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/completion-api/src/main/java/com/tyron/completion/progress/ProgressManager.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/completion-api/src/main/java/com/tyron/completion/index/CompilerService.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :completion-api:bundleLibCompileToJarDebug
+> Task :java-completion:generateDebugBuildConfig
+> Task :kotlin-completion:generateDebugBuildConfig
+> Task :app:processDebugResources
+> Task :treeview:generateDebugBuildConfig
+> Task :treeview:javaPreCompileDebug
+
+> Task :treeview:compileDebugJavaWithJavac
+Note: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/treeview/src/main/java/com/tyron/ui/treeview/TreeViewAdapter.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :treeview:bundleLibCompileToJarDebug
+> Task :java-completion:javaPreCompileDebug
+> Task :dependency-resolver:generateDebugBuildConfig
+> Task :dependency-resolver:javaPreCompileDebug
+> Task :dependency-resolver:compileDebugJavaWithJavac
+> Task :dependency-resolver:bundleLibCompileToJarDebug
+> Task :appcompat-widgets:generateDebugBuildConfig
+> Task :appcompat-widgets:javaPreCompileDebug
+> Task :proteus-core:generateDebugBuildConfig
+> Task :proteus-core:javaPreCompileDebug
+> Task :kotlin-completion:compileDebugKotlin
+
+> Task :proteus-core:compileDebugJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :proteus-core:bundleLibCompileToJarDebug
+> Task :appcompat-widgets:compileDebugJavaWithJavac
+> Task :appcompat-widgets:bundleLibCompileToJarDebug
+> Task :cardview:generateDebugBuildConfig
+> Task :cardview:javaPreCompileDebug
+> Task :cardview:compileDebugJavaWithJavac
+> Task :cardview:bundleLibCompileToJarDebug
+> Task :constraintlayout:generateDebugBuildConfig
+> Task :constraintlayout:javaPreCompileDebug
+> Task :constraintlayout:compileDebugJavaWithJavac
+> Task :constraintlayout:bundleLibCompileToJarDebug
+> Task :layout-preview:generateDebugBuildConfig
+> Task :layout-preview:javaPreCompileDebug
+> Task :vector-parser:generateDebugBuildConfig
+> Task :vector-parser:javaPreCompileDebug
+
+> Task :vector-parser:compileDebugJavaWithJavac
+Note: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/vector-parser/src/main/java/com/tyron/vectorparser/DynamicVectorDrawable.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :vector-parser:bundleLibCompileToJarDebug
+> Task :xml-completion:generateDebugBuildConfig
+> Task :xml-completion:javaPreCompileDebug
+> Task :lint:generateDebugBuildConfig
+> Task :lint:javaPreCompileDebug
+> Task :viewbinding-inject:generateDebugBuildConfig
+> Task :viewbinding-inject:javaPreCompileDebug
+> Task :app:javaPreCompileDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :appcompat-widgets:mergeDebugShaders
+> Task :appcompat-widgets:compileDebugShaders NO-SOURCE
+> Task :appcompat-widgets:generateDebugAssets UP-TO-DATE
+> Task :appcompat-widgets:packageDebugAssets
+> Task :cardview:mergeDebugShaders
+> Task :cardview:compileDebugShaders NO-SOURCE
+> Task :cardview:generateDebugAssets UP-TO-DATE
+> Task :cardview:packageDebugAssets
+> Task :code-editor:mergeDebugShaders
+> Task :code-editor:compileDebugShaders NO-SOURCE
+> Task :code-editor:generateDebugAssets UP-TO-DATE
+> Task :code-editor:packageDebugAssets
+> Task :completion-api:mergeDebugShaders
+> Task :completion-api:compileDebugShaders NO-SOURCE
+> Task :completion-api:generateDebugAssets UP-TO-DATE
+> Task :completion-api:packageDebugAssets
+> Task :constraintlayout:mergeDebugShaders
+> Task :constraintlayout:compileDebugShaders NO-SOURCE
+> Task :constraintlayout:generateDebugAssets UP-TO-DATE
+> Task :constraintlayout:packageDebugAssets
+> Task :dependency-resolver:mergeDebugShaders
+> Task :dependency-resolver:compileDebugShaders NO-SOURCE
+> Task :dependency-resolver:generateDebugAssets UP-TO-DATE
+> Task :dependency-resolver:packageDebugAssets
+> Task :java-completion:mergeDebugShaders
+> Task :java-completion:compileDebugShaders NO-SOURCE
+> Task :java-completion:generateDebugAssets UP-TO-DATE
+> Task :java-completion:packageDebugAssets
+> Task :layout-preview:mergeDebugShaders
+> Task :layout-preview:compileDebugShaders NO-SOURCE
+> Task :layout-preview:generateDebugAssets UP-TO-DATE
+> Task :layout-preview:packageDebugAssets
+> Task :lint:mergeDebugShaders
+> Task :lint:compileDebugShaders NO-SOURCE
+> Task :lint:generateDebugAssets UP-TO-DATE
+> Task :lint:packageDebugAssets
+> Task :proteus-core:mergeDebugShaders
+> Task :proteus-core:compileDebugShaders NO-SOURCE
+> Task :proteus-core:generateDebugAssets UP-TO-DATE
+> Task :proteus-core:packageDebugAssets
+> Task :treeview:mergeDebugShaders
+> Task :treeview:compileDebugShaders NO-SOURCE
+> Task :treeview:generateDebugAssets UP-TO-DATE
+> Task :treeview:packageDebugAssets
+> Task :vector-parser:mergeDebugShaders
+> Task :vector-parser:compileDebugShaders NO-SOURCE
+> Task :vector-parser:generateDebugAssets UP-TO-DATE
+> Task :vector-parser:packageDebugAssets
+> Task :viewbinding-inject:mergeDebugShaders
+> Task :viewbinding-inject:compileDebugShaders NO-SOURCE
+> Task :viewbinding-inject:generateDebugAssets UP-TO-DATE
+> Task :viewbinding-inject:packageDebugAssets
+> Task :xml-completion:mergeDebugShaders
+> Task :xml-completion:compileDebugShaders NO-SOURCE
+> Task :xml-completion:generateDebugAssets UP-TO-DATE
+> Task :xml-completion:packageDebugAssets
+> Task :app:l8DexDesugarLibDebug
+> Task :app:processDebugJavaRes NO-SOURCE
+> Task :appcompat-widgets:processDebugJavaRes NO-SOURCE
+> Task :appcompat-widgets:bundleLibResDebug NO-SOURCE
+> Task :cardview:processDebugJavaRes NO-SOURCE
+> Task :cardview:bundleLibResDebug NO-SOURCE
+> Task :code-editor:processDebugJavaRes NO-SOURCE
+> Task :code-editor:bundleLibResDebug NO-SOURCE
+> Task :completion-api:processDebugJavaRes NO-SOURCE
+> Task :completion-api:bundleLibResDebug NO-SOURCE
+> Task :constraintlayout:processDebugJavaRes NO-SOURCE
+> Task :constraintlayout:bundleLibResDebug NO-SOURCE
+> Task :dependency-resolver:processDebugJavaRes NO-SOURCE
+> Task :dependency-resolver:bundleLibResDebug NO-SOURCE
+> Task :java-completion:processDebugJavaRes NO-SOURCE
+> Task :layout-preview:processDebugJavaRes NO-SOURCE
+> Task :layout-preview:bundleLibResDebug NO-SOURCE
+> Task :lint:processDebugJavaRes NO-SOURCE
+> Task :lint:bundleLibResDebug NO-SOURCE
+> Task :proteus-core:processDebugJavaRes NO-SOURCE
+> Task :proteus-core:bundleLibResDebug NO-SOURCE
+> Task :treeview:processDebugJavaRes NO-SOURCE
+> Task :treeview:bundleLibResDebug NO-SOURCE
+> Task :vector-parser:processDebugJavaRes NO-SOURCE
+> Task :vector-parser:bundleLibResDebug NO-SOURCE
+> Task :viewbinding-inject:processDebugJavaRes NO-SOURCE
+> Task :xml-completion:processDebugJavaRes NO-SOURCE
+> Task :xml-completion:bundleLibResDebug NO-SOURCE
+
+> Task :kotlin-completion:compileDebugKotlin
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/CachedEnvironment.kt: (9, 37): 'KotlinCoreEnvironment' is a final type, and thus a value of the type parameter is predetermined
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinAnalysisFileCache.kt: (32, 13): Check for instance is always 'true'
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinCommonEnvironment.kt: (127, 53): 'EP_NAME: ExtensionPointName<PsiElementFinder!>!' is deprecated. Deprecated in Java
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinCommonEnvironment.kt: (128, 36): 'constructor PsiElementFinderImpl(Project!, JavaFileManager!)' is deprecated. Deprecated in Java
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinCommonEnvironment.kt: (131, 53): 'EP_NAME: ExtensionPointName<PsiElementFinder!>!' is deprecated. Deprecated in Java
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinCommonEnvironment.kt: (200, 60): 'EP_NAME: ExtensionPointName<PsiTreeChangePreprocessor!>!' is deprecated. Deprecated in Java
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinCommonEnvironment.kt: (201, 51): 'EP_NAME: ExtensionPointName<PsiElementFinder!>!' is deprecated. Deprecated in Java
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinCommonEnvironment.kt: (218, 21): 'getRootArea(): ExtensionsArea!' is deprecated. Deprecated in Java
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinCommonEnvironment.kt: (219, 42): 'registerExtension(T): Unit' is deprecated. Deprecated in Java
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinCommonEnvironment.kt: (236, 20): 'getRootArea(): ExtensionsArea!' is deprecated. Deprecated in Java
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinCommonEnvironment.kt: (251, 39): 'getRootArea(): ExtensionsArea!' is deprecated. Deprecated in Java
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinEnvironment.kt: (123, 57): No cast needed
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinEnvironment.kt: (154, 57): No cast needed
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/model/KotlinEnvironment.kt: (162, 54): Parameter 'module' is never used
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/resolve/injection.kt: (44, 5): Parameter 'languageFeatureSettings' is never used
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/resolve/lang/kotlin/CodeAssistVirtualFileFinder.kt: (93, 33): Parameter 'toOSString' is never used
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/resolve/lang/kotlin/CodeAssistVirtualFileFinder.kt: (102, 33): Parameter 'classId' is never used
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin/completion/core/resolve/lang/kotlin/CodeAssistVirtualFileFinder.kt: (102, 51): Parameter 'fileName' is never used
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin_completion/diagnostic/ConvertDiagnostic.kt: (14, 13): Variable 'range' is never used
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/kotlin-completion/src/main/java/com/tyron/kotlin_completion/index/SymbolIndex.kt: (47, 13): Variable 'started' is never used
+
+> Task :kotlin-completion:javaPreCompileDebug
+> Task :app:checkDebugDuplicateClasses
+> Task :kotlin-completion:compileDebugJavaWithJavac
+> Task :app:desugarDebugFileDependencies
+> Task :kotlin-completion:bundleLibCompileToJarDebug
+> Task :java-completion:compileDebugKotlin NO-SOURCE
+
+> Task :java-completion:compileDebugJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :java-completion:bundleLibCompileToJarDebug
+
+> Task :code-editor:compileDebugJavaWithJavac
+Note: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/code-editor/src/main/java/com/tyron/code/ui/editor/CompletionItemAdapter.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :code-editor:bundleLibCompileToJarDebug
+
+> Task :xml-completion:compileDebugJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :xml-completion:bundleLibCompileToJarDebug
+
+> Task :layout-preview:compileDebugJavaWithJavac
+Note: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/layout-preview/src/main/java/com/tyron/layoutpreview2/attr/impl/ViewAttributeApplier.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :layout-preview:bundleLibCompileToJarDebug
+
+> Task :lint:compileDebugJavaWithJavac
+Note: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/lint/src/main/java/com/tyron/lint/client/LintDriver.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :lint:bundleLibCompileToJarDebug
+> Task :viewbinding-inject:compileDebugKotlin
+> Task :viewbinding-inject:compileDebugJavaWithJavac
+> Task :viewbinding-inject:bundleLibCompileToJarDebug
+
+> Task :app:compileDebugKotlin
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/AddToStageTask.kt: (4, 8): This class shouldn't be used in Kotlin. Use kotlin.String instead.
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/AddToStageTask.kt: (15, 35): This class shouldn't be used in Kotlin. Use kotlin.String instead.
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/AddToStageTask.kt: (15, 48): This class shouldn't be used in Kotlin. Use kotlin.String instead.
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/GitAddAllToStageTask.kt: (4, 8): This class shouldn't be used in Kotlin. Use kotlin.String instead.
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/GitCloneTask.kt: (131, 12): Name shadowed: builder
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/RemoveFromIndexForceTask.kt: (4, 8): This class shouldn't be used in Kotlin. Use kotlin.String instead.
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/RemoveFromIndexForceTask.kt: (16, 38): This class shouldn't be used in Kotlin. Use kotlin.String instead.
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/RemoveFromIndexForceTask.kt: (16, 51): This class shouldn't be used in Kotlin. Use kotlin.String instead.
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/RemoveFromIndexTask.kt: (4, 8): This class shouldn't be used in Kotlin. Use kotlin.String instead.
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/RemoveFromIndexTask.kt: (15, 38): This class shouldn't be used in Kotlin. Use kotlin.String instead.
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/RemoveFromIndexTask.kt: (15, 51): This class shouldn't be used in Kotlin. Use kotlin.String instead.
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/ResetChangesTask.kt: (4, 8): This class shouldn't be used in Kotlin. Use kotlin.String instead.
+w: /home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/app/src/main/java/com/tyron/code/tasks/git/ResetChangesTask.kt: (16, 37): This class shouldn't be used in Kotlin. Use kotlin.String instead.
+
+> Task :app:compileDebugJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :kotlin-completion:mergeDebugShaders
+> Task :kotlin-completion:compileDebugShaders NO-SOURCE
+> Task :kotlin-completion:generateDebugAssets UP-TO-DATE
+> Task :kotlin-completion:packageDebugAssets
+> Task :app:mergeDebugAssets
+> Task :app:compressDebugAssets
+> Task :java-completion:bundleLibResDebug NO-SOURCE
+> Task :kotlin-completion:processDebugJavaRes NO-SOURCE
+> Task :kotlin-completion:bundleLibResDebug
+> Task :viewbinding-inject:bundleLibResDebug
+> Task :app:mergeDebugJavaResource
+> Task :app:mergeExtDexDebug
+> Task :code-editor:bundleLibRuntimeToDirDebug
+> Task :layout-preview:bundleLibRuntimeToDirDebug
+> Task :xml-completion:bundleLibRuntimeToDirDebug
+> Task :viewbinding-inject:bundleLibRuntimeToDirDebug
+> Task :lint:bundleLibRuntimeToDirDebug
+> Task :java-completion:bundleLibRuntimeToDirDebug
+> Task :kotlin-completion:bundleLibRuntimeToDirDebug
+> Task :dependency-resolver:bundleLibRuntimeToDirDebug
+> Task :completion-api:bundleLibRuntimeToDirDebug
+> Task :treeview:bundleLibRuntimeToDirDebug
+> Task :vector-parser:bundleLibRuntimeToDirDebug
+> Task :proteus-core:bundleLibRuntimeToDirDebug
+> Task :appcompat-widgets:bundleLibRuntimeToDirDebug
+> Task :constraintlayout:bundleLibRuntimeToDirDebug
+> Task :cardview:bundleLibRuntimeToDirDebug
+> Task :appcompat-widgets:mergeDebugJniLibFolders
+> Task :appcompat-widgets:mergeDebugNativeLibs NO-SOURCE
+> Task :appcompat-widgets:copyDebugJniLibsProjectOnly
+> Task :cardview:mergeDebugJniLibFolders
+> Task :cardview:mergeDebugNativeLibs NO-SOURCE
+> Task :cardview:copyDebugJniLibsProjectOnly
+> Task :code-editor:mergeDebugJniLibFolders
+> Task :code-editor:mergeDebugNativeLibs NO-SOURCE
+> Task :code-editor:copyDebugJniLibsProjectOnly
+> Task :completion-api:mergeDebugJniLibFolders
+> Task :completion-api:mergeDebugNativeLibs NO-SOURCE
+> Task :completion-api:copyDebugJniLibsProjectOnly
+> Task :constraintlayout:mergeDebugJniLibFolders
+> Task :constraintlayout:mergeDebugNativeLibs NO-SOURCE
+> Task :constraintlayout:copyDebugJniLibsProjectOnly
+> Task :dependency-resolver:mergeDebugJniLibFolders
+> Task :dependency-resolver:mergeDebugNativeLibs NO-SOURCE
+> Task :dependency-resolver:copyDebugJniLibsProjectOnly
+> Task :java-completion:mergeDebugJniLibFolders
+> Task :java-completion:mergeDebugNativeLibs NO-SOURCE
+> Task :java-completion:copyDebugJniLibsProjectOnly
+> Task :kotlin-completion:mergeDebugJniLibFolders
+> Task :kotlin-completion:mergeDebugNativeLibs NO-SOURCE
+> Task :kotlin-completion:copyDebugJniLibsProjectOnly
+> Task :layout-preview:mergeDebugJniLibFolders
+> Task :layout-preview:mergeDebugNativeLibs NO-SOURCE
+> Task :layout-preview:copyDebugJniLibsProjectOnly
+> Task :lint:mergeDebugJniLibFolders
+> Task :lint:mergeDebugNativeLibs NO-SOURCE
+> Task :lint:copyDebugJniLibsProjectOnly
+> Task :proteus-core:mergeDebugJniLibFolders
+> Task :proteus-core:mergeDebugNativeLibs NO-SOURCE
+> Task :proteus-core:copyDebugJniLibsProjectOnly
+> Task :treeview:mergeDebugJniLibFolders
+> Task :treeview:mergeDebugNativeLibs NO-SOURCE
+> Task :treeview:copyDebugJniLibsProjectOnly
+> Task :vector-parser:mergeDebugJniLibFolders
+> Task :vector-parser:mergeDebugNativeLibs NO-SOURCE
+> Task :vector-parser:copyDebugJniLibsProjectOnly
+> Task :viewbinding-inject:mergeDebugJniLibFolders
+> Task :viewbinding-inject:mergeDebugNativeLibs NO-SOURCE
+> Task :viewbinding-inject:copyDebugJniLibsProjectOnly
+> Task :xml-completion:mergeDebugJniLibFolders
+> Task :xml-completion:mergeDebugNativeLibs NO-SOURCE
+> Task :xml-completion:copyDebugJniLibsProjectOnly
+> Task :code-editor:preReleaseBuild UP-TO-DATE
+> Task :completion-api:preReleaseBuild UP-TO-DATE
+> Task :completion-api:compileReleaseAidl NO-SOURCE
+> Task :java-completion:preReleaseBuild UP-TO-DATE
+> Task :kotlin-completion:preReleaseBuild UP-TO-DATE
+> Task :kotlin-completion:compileReleaseAidl NO-SOURCE
+> Task :treeview:preReleaseBuild UP-TO-DATE
+> Task :treeview:compileReleaseAidl NO-SOURCE
+> Task :java-completion:compileReleaseAidl NO-SOURCE
+> Task :app:dexBuilderDebug
+> Task :code-editor:compileReleaseAidl NO-SOURCE
+> Task :app:mergeLibDexDebug
+> Task :app:mergeProjectDexDebug
+> Task :code-editor:mergeReleaseJniLibFolders
+> Task :code-editor:mergeReleaseNativeLibs NO-SOURCE
+> Task :code-editor:stripReleaseDebugSymbols NO-SOURCE
+> Task :code-editor:copyReleaseJniLibsProjectAndLocalJars
+> Task :completion-api:packageReleaseRenderscript NO-SOURCE
+> Task :java-completion:packageReleaseRenderscript NO-SOURCE
+> Task :code-editor:compileReleaseRenderscript NO-SOURCE
+> Task :code-editor:generateReleaseResValues
+> Task :code-editor:extractDeepLinksForAarRelease
+> Task :code-editor:generateReleaseBuildConfig
+> Task :code-editor:generateReleaseResources
+Failed to execute org.gradle.cache.internal.AsyncCacheAccessDecoratedCache$$Lambda$373/0x000000084044bc40@3f7dfe43.
+org.gradle.api.UncheckedIOException: Could not add entry '/home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/code-editor/build/intermediates/packaged_res/release/drawable/round_content_cut_20.xml' to cache fileHashes.bin (/home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/.gradle/7.6/fileHashes/fileHashes.bin).
+	at org.gradle.cache.internal.btree.BTreePersistentIndexedCache.put(BTreePersistentIndexedCache.java:162)
+	at org.gradle.cache.internal.DefaultMultiProcessSafePersistentIndexedCache.lambda$put$1(DefaultMultiProcessSafePersistentIndexedCache.java:67)
+	at org.gradle.cache.internal.DefaultFileLockManager$DefaultFileLock.doWriteAction(DefaultFileLockManager.java:216)
+	at org.gradle.cache.internal.DefaultFileLockManager$DefaultFileLock.writeFile(DefaultFileLockManager.java:206)
+	at org.gradle.cache.internal.DefaultCacheAccess$UnitOfWorkFileAccess.writeFile(DefaultCacheAccess.java:449)
+	at org.gradle.cache.internal.DefaultMultiProcessSafePersistentIndexedCache.put(DefaultMultiProcessSafePersistentIndexedCache.java:67)
+	at org.gradle.cache.internal.AsyncCacheAccessDecoratedCache.lambda$putLater$1(AsyncCacheAccessDecoratedCache.java:56)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.cache.internal.CacheAccessWorker$2.run(CacheAccessWorker.java:185)
+	at org.gradle.internal.Factories$1.create(Factories.java:31)
+	at org.gradle.cache.internal.DefaultCacheAccess.useCache(DefaultCacheAccess.java:220)
+	at org.gradle.cache.internal.DefaultCacheAccess.useCache(DefaultCacheAccess.java:201)
+	at org.gradle.cache.internal.CacheAccessWorker.flushOperations(CacheAccessWorker.java:175)
+	at org.gradle.cache.internal.CacheAccessWorker.run(CacheAccessWorker.java:145)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.gradle.api.UncheckedIOException: java.io.IOException: No space left on device
+	at org.gradle.cache.internal.btree.FileBackedBlockStore.write(FileBackedBlockStore.java:140)
+	at org.gradle.cache.internal.btree.CachingBlockStore.flush(CachingBlockStore.java:64)
+	at org.gradle.cache.internal.btree.FreeListBlockStore.flush(FreeListBlockStore.java:103)
+	at org.gradle.cache.internal.btree.StateCheckBlockStore.flush(StateCheckBlockStore.java:85)
+	at org.gradle.cache.internal.btree.BTreePersistentIndexedCache.put(BTreePersistentIndexedCache.java:160)
+	... 18 more
+Caused by: java.io.IOException: No space left on device
+	at java.base	at java.base/java.io.RandomAccessFile.writeBytes(Native Method)
+
+
+
+
+
+
+
+
+	... 22 more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	... 18 more
+
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not add entry ':code-editor:packageReleaseResources' to cache executionHistory.bin (/home/nieuwmijnleven/workspace/CodeAssist-ALPHA-0.2.9/.gradle/7.6/executionHistory/executionHistory.bin).
+> java.io.IOException: No space left on device
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 11m 45s

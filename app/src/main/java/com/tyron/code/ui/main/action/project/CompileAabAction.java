@@ -68,7 +68,7 @@ public class CompileAabAction extends AnAction {
     }
 
     presentation.setVisible(true);
-    presentation.setText(context.getString(R.string.menu_build_aab));
+    presentation.setText("R.string.menu_build_aab");
   }
 
   @Override

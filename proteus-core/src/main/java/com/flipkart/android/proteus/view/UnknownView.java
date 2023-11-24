@@ -3,11 +3,11 @@ package com.flipkart.android.proteus.view;
 import android.content.Context;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatTextView;
 import com.flipkart.android.proteus.ProteusView;
 
-public class UnknownView extends TextView implements ProteusView {
+public class UnknownView extends AppCompatTextView implements ProteusView {
 
   private Manager mManager;
 

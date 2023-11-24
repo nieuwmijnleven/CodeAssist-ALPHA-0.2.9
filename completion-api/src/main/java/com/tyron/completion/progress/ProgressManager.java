@@ -1,5 +1,6 @@
 package com.tyron.completion.progress;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Handler;
@@ -45,6 +46,7 @@ public class ProgressManager {
    *     thread
    * @param indicator The class used to control this task's execution
    */
+  @SuppressLint("NewApi")
   public void runAsync(
       Runnable runnable, Consumer<ProgressIndicator> cancelConsumer, ProgressIndicator indicator) {
     mPool.execute(

@@ -8,7 +8,9 @@ import android.content.Context
 import com.blankj.utilcode.util.ThreadUtils
 import com.tyron.code.util.executeAsyncProvideError
 import android.widget.Toast
+import android.annotation.SuppressLint
 
+@SuppressLint("SuspiciousIndentation")
 object GitInitTask {
     
     fun init(project:Project, context:Context) {

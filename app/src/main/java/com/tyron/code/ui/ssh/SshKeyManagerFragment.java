@@ -338,8 +338,8 @@ public class SshKeyManagerFragment extends Fragment {
               public void onClick(DialogInterface dialog, int which) {
                 switch (which) {
                   case 0:
-                    String message =
-                        getString(R.string.dialog_confirm_delete, sshkeys.getRootFile().getName());
+                    String message = "tmp";
+                    // getString(R.string.dialog_confirm_delete, sshkeys.getRootFile().getName());
                     new MaterialAlertDialogBuilder(requireContext())
                         .setTitle(R.string.dialog_delete)
                         .setMessage(message)

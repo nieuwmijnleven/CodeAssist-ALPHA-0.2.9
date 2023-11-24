@@ -17,6 +17,5 @@ org.gradle.parallel=true
 android.useAndroidX=true
 # Automatically convert third-party libraries to use AndroidX
 android.enableJetifier=true
-org.gradle.configureondemand=true
-org.gradle.unsafe.configuration-cache=false
+org.gradle.configureondemand=truorg.gradle.unsafe.configuration-cache=false
 android.jetifier.ignorelist = bundletool-1.14.1.jar,org.eclipse.jdt.core-3.28.0.jar,koltin-compiler-embeddable-1.6.0.jar

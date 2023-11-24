@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	
-	<string name="menu_build_aab">Build AAB</string>
+	<!-- string name="menu_build_aab">Build AAB</string -->
     <!-- Text Actions -->
-    <string name="text_actions">Text Actions</string>
-    <string name="expand_selection">Expand Selection</string>
+    <!--string name="text_actions">Text Actions</string-->
+    <!--string name="expand_selection">Expand Selection</string-->
     <string name="copied_to_clipoard">Text has been copied to clipboard.</string>
 
     <!-- File Actions -->

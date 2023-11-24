@@ -1,5 +1,6 @@
 package com.tyron.completion.util;
 
+import android.annotation.SuppressLint;
 import com.google.common.base.Throwables;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
@@ -18,6 +19,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
+@SuppressLint("NewApi")
 public class RewriteUtil {
 
   private static final Logger sLogger = IdeLog.getCurrentLogger(RewriteUtil.class);

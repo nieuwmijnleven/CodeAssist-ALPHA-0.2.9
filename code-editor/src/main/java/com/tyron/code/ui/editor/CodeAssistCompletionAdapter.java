@@ -1,5 +1,6 @@
 package com.tyron.code.ui.editor;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,7 @@ public class CodeAssistCompletionAdapter extends EditorCompletionAdapter {
     return AndroidUtilities.dp(50);
   }
 
+  @SuppressLint("RestrictedApi")
   @Override
   protected View getView(int pos, View view, ViewGroup parent, boolean isCurrentCursorPosition) {
     if (view == null) {

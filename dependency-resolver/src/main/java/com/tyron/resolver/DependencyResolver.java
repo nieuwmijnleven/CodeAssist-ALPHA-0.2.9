@@ -1,5 +1,6 @@
 package com.tyron.resolver;
 
+import android.annotation.SuppressLint;
 import android.text.TextUtils;
 import com.tyron.resolver.model.Dependency;
 import com.tyron.resolver.model.Pom;
@@ -64,6 +65,7 @@ public class DependencyResolver {
     return new ArrayList<>(resolvedPoms.keySet());
   }
 
+  @SuppressLint("NewApi")
   private void resolve(Pom pom) {
     if (resolvedPoms.containsKey(pom)) {
       if (pom.isUserDefined()) {

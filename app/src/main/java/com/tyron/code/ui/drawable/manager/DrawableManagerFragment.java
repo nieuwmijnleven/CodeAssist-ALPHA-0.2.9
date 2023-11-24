@@ -268,8 +268,8 @@ public class DrawableManagerFragment extends Fragment {
                     break;
 
                   case 1:
-                    String message =
-                        getString(R.string.dialog_confirm_delete, drawable.getRootFile().getName());
+                    String message = "tmp";
+                    // getString(R.string.dialog_confirm_delete, drawable.getRootFile().getName());
                     new MaterialAlertDialogBuilder(requireContext())
                         .setTitle(R.string.dialog_delete)
                         .setMessage(message)

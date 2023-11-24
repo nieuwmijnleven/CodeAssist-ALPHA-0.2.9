@@ -2,12 +2,12 @@ package com.tyron.layoutpreview2.view.impl;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatTextView;
 import com.tyron.layoutpreview2.ViewManager;
 import com.tyron.layoutpreview2.view.EditorView;
 
-public class EditorTextView extends TextView implements EditorView {
+public class EditorTextView extends AppCompatTextView implements EditorView {
 
   private ViewManager mViewManger;
 

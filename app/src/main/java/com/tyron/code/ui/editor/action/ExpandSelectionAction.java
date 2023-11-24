@@ -49,7 +49,8 @@ public class ExpandSelectionAction extends AnAction {
 
     DataContext context = event.getDataContext();
     presentation.setVisible(true);
-    presentation.setText(context.getString(R.string.expand_selection));
+    // presentation.setText(context.getString(R.string.expand_selection));
+    presentation.setText("R.string.expand_selection");
     presentation.setIcon(
         ResourcesCompat.getDrawable(context.getResources(), R.drawable.ic_baseline_code_24, null));
   }

@@ -78,14 +78,14 @@ public class EditVectorDialogFragment extends DialogFragment {
           @Override
           public void onClick(View view) {
             if (!color.getText().toString().trim().startsWith("#")) {
-              Toast.makeText(requireContext(), "Invalid color code", 3000).show();
+              Toast.makeText(requireContext(), "Invalid color code", Toast.LENGTH_LONG).show();
             } else {
               try {
                 icon.setColorFilter(
                     Color.parseColor(color.getText().toString().trim()), PorterDuff.Mode.MULTIPLY);
                 round.setBackgroundColor(Color.parseColor(color.getText().toString().trim()));
               } catch (Exception e) {
-                Toast.makeText(requireContext(), e.toString(), 3000).show();
+                Toast.makeText(requireContext(), e.toString(), Toast.LENGTH_LONG).show();
               }
             }
           }
@@ -176,7 +176,7 @@ public class EditVectorDialogFragment extends DialogFragment {
             StandardOpenOption.TRUNCATE_EXISTING);
       }
     } catch (Exception e) {
-      Toast.makeText(requireContext(), e.toString(), 3000).show();
+      Toast.makeText(requireContext(), e.toString(), Toast.LENGTH_LONG).show();
     }
   }
 
@@ -203,7 +203,7 @@ public class EditVectorDialogFragment extends DialogFragment {
       SVG svg = SVG.getFromInputStream(fileInputStream);
       drawable = new PictureDrawable(svg.renderToPicture());
     } catch (Exception e) {
-      Toast.makeText(requireContext(), e.toString(), 3000).show();
+      Toast.makeText(requireContext(), e.toString(), Toast.LENGTH_LONG).show();
     }
     return drawable;
   }
