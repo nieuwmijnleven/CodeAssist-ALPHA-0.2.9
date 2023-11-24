@@ -8,6 +8,7 @@ import com.tyron.builder.compiler.BuildType;
 import com.tyron.builder.compiler.Task;
 import com.tyron.builder.exception.CompilationFailedException;
 import com.tyron.builder.log.ILogger;
+import com.tyron.builder.Logger;
 import com.tyron.builder.project.Project;
 import com.tyron.builder.project.api.AndroidModule;
 import com.tyron.builder.project.api.JavaModule;
@@ -24,6 +25,8 @@ import java.util.stream.Collectors;
 public class D8Task extends Task<JavaModule> {
 
   private static final String TAG = D8Task.class.getSimpleName();
+
+  private Logger logger = new Logger();
 
   public D8Task(Project project, AndroidModule module, ILogger logger) {
     super(project, module, logger);
@@ -44,12 +47,18 @@ public class D8Task extends Task<JavaModule> {
 
   public void compile() throws CompilationFailedException {
     try {
+      logger.log("-- start compile --");
+      logger.log("Dexing libraries");
+      
       getLogger().debug("Dexing libraries.");
       ensureDexedLibraries();
 
+      logger.log("Merging dexes and source files"); 
       getLogger().debug("Merging dexes and source files");
 
       List<Path> libraryDexes = getLibraryDexes();
+      logger.log("-- libraryDexes --");
+      libraryDexes.forEach(path -> path.toAbsolutePath());
 
       D8Command command =
           D8Command.builder(new DexDiagnosticHandler(getLogger(), getModule()))
@@ -79,6 +88,8 @@ public class D8Task extends Task<JavaModule> {
    */
   protected void ensureDexedLibraries() throws com.android.tools.r8.CompilationFailedException {
     List<File> libraries = getModule().getLibraries();
+    logger.log("-- getModule().getLibraries()  --");         
+    libraries.forEach(path -> path.getAbsolutePath());  
 
     for (File lib : libraries) {
       File parentFile = lib.getParentFile();
@@ -97,6 +108,7 @@ public class D8Task extends Task<JavaModule> {
         }
         if (lib.exists()) {
           getLogger().debug("Dexing jar " + parentFile.getName());
+	 logger.log("Dexing jar " + parentFile.getName());
           D8Command command =
               D8Command.builder(new DexDiagnosticHandler(getLogger(), getModule()))
                   .addLibraryFiles(getLibraryFiles())
@@ -117,6 +129,13 @@ public class D8Task extends Task<JavaModule> {
     List<Path> path = new ArrayList<>();
     path.add(getModule().getBootstrapJarFile().toPath());
     path.add(getModule().getLambdaStubsJarFile().toPath());
+    
+    logger.log("-- getModule().getBootstrapJarFile()  --");   
+    getModule().getBootstrapJarFile().forEach(path -> path.toAbsolutePath());
+
+    logger.log("-- getModule().getLambdaStubsJarFile()  --");
+    getModule().getLambdaStubsJarFile().forEach(path -> path.toAbsolutePath());
+    
     return path;
   }
 
@@ -136,6 +155,10 @@ public class D8Task extends Task<JavaModule> {
         }
       }
     }
+
+    logger.log("-- getLibraryDexes()  --");
+    dexes.forEach(path -> path.toAbsolutePath());
+    
     return dexes;
   }
 
@@ -154,6 +177,9 @@ public class D8Task extends Task<JavaModule> {
         }
       }
     }
+
+    logger.log("-- getClassFiles()  --");         paths.forEach(path -> path.toAbsolutePath());  
+    
     return paths;
   }
 }
