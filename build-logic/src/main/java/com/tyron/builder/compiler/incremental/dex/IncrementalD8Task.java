@@ -6,6 +6,7 @@ import com.android.tools.r8.D8;
 import com.android.tools.r8.D8Command;
 import com.android.tools.r8.DiagnosticsHandler;
 import com.android.tools.r8.OutputMode;
+import com.tyron.builder.Logger;
 import com.tyron.builder.compiler.BuildType;
 import com.tyron.builder.compiler.Task;
 import com.tyron.builder.compiler.dex.D8Task;
@@ -197,6 +198,10 @@ public class IncrementalD8Task extends Task<AndroidModule> {
         }
       }
     }
+
+    Logger.log("-- getLibraryDexes()  --");
+    dexes.forEach(path -> Logger.log(path.toAbsolutePath().toString()));
+
     return dexes;
   }
 
@@ -220,6 +225,8 @@ public class IncrementalD8Task extends Task<AndroidModule> {
    */
   protected void ensureDexedLibraries() throws com.android.tools.r8.CompilationFailedException {
     List<File> libraries = getModule().getLibraries();
+    Logger.log("-- getModule().getLibraries()  --");
+    libraries.forEach(file -> Logger.log(file.getAbsolutePath()));
 
     for (File lib : libraries) {
       File parentFile = lib.getParentFile();
@@ -268,6 +275,13 @@ public class IncrementalD8Task extends Task<AndroidModule> {
     List<Path> path = new ArrayList<>();
     path.add(getModule().getLambdaStubsJarFile().toPath());
     path.add(getModule().getBootstrapJarFile().toPath());
+
+    Logger.log("-- getModule().getBootstrapJarFile()  --");
+    Logger.log(getModule().getBootstrapJarFile().getAbsolutePath());
+
+    Logger.log("-- getModule().getLambdaStubsJarFile()  --");
+    Logger.log(getModule().getLambdaStubsJarFile().getAbsolutePath());
+
     return path;
   }
 
@@ -305,6 +319,10 @@ public class IncrementalD8Task extends Task<AndroidModule> {
         }
       }
     }
+
+    Logger.log("-- getAllDexFiles()  --");
+    files.forEach(path -> Logger.log(path.toAbsolutePath().toString()));
+
     return files;
   }
 }
