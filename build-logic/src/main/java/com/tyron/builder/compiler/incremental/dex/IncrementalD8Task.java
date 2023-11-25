@@ -115,6 +115,7 @@ public class IncrementalD8Task extends Task<AndroidModule> {
               .setMinApiLevel(getModule().getMinSdk())
               .setMode(CompilationMode.RELEASE)
               .setIntermediate(true)
+	      .setDisableDesugaring(true)
               .setOutput(mOutputPath, OutputMode.DexFilePerClassFile)
               .build();
       D8.run(command);
@@ -143,6 +144,7 @@ public class IncrementalD8Task extends Task<AndroidModule> {
               .setMinApiLevel(getModule().getMinSdk())
               .setMode(CompilationMode.DEBUG)
               .setIntermediate(true)
+	      .setDisableDesugaring(true)
               .setOutput(mOutputPath, OutputMode.DexFilePerClassFile)
               .build();
       D8.run(command);
@@ -163,6 +165,7 @@ public class IncrementalD8Task extends Task<AndroidModule> {
 
       File output = new File(getModule().getBuildDirectory(), "bin");
       builder.setMode(CompilationMode.DEBUG);
+      builder.setDisableDesugaring(true);
       builder.setOutput(output.toPath(), OutputMode.DexIndexed);
       D8.run(builder.build());
 
@@ -182,6 +185,7 @@ public class IncrementalD8Task extends Task<AndroidModule> {
             .addProgramFiles(getLibraryDexes())
             .setMinApiLevel(getModule().getMinSdk())
             .setMode(CompilationMode.RELEASE)
+	    .setDisableDesugaring(true)
             .setOutput(output.toPath(), OutputMode.DexIndexed)
             .build();
     D8.run(command);
@@ -263,6 +267,7 @@ public class IncrementalD8Task extends Task<AndroidModule> {
                   .addProgramFiles(lib.toPath())
                   .setMode(CompilationMode.RELEASE)
                   .setMinApiLevel(getModule().getMinSdk())
+	          .setDisableDesugaring(true)
                   .setOutput(lib.getParentFile().toPath(), OutputMode.DexIndexed)
                   .build();
           D8.run(command);

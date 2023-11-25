@@ -71,6 +71,7 @@ public class D8Task extends Task<JavaModule> {
               .addProgramFiles(
                   getClassFiles(new File(getModule().getBuildDirectory(), "bin/classes")))
               .addProgramFiles(libraryDexes)
+	      .setDisableDesugaring(true)
               .setOutput(
                   new File(getModule().getBuildDirectory(), "bin").toPath(), OutputMode.DexIndexed)
               .build();
@@ -117,6 +118,7 @@ public class D8Task extends Task<JavaModule> {
                   .setMinApiLevel(getModule().getMinSdk())
                   .addProgramFiles(lib.toPath())
                   .setMode(CompilationMode.RELEASE)
+	          .setDisableDesugaring(true)
                   .setOutput(lib.getParentFile().toPath(), OutputMode.DexIndexed)
                   .build();
           D8.run(command);
