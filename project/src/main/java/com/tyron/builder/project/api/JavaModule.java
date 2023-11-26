@@ -77,6 +77,10 @@ public interface JavaModule extends Module {
    */
   File getBootstrapJarFile();
 
+  File getDesugaringJarFile();
+    
+  File getDesugaringConfigFile();
+
   Map<String, File> getInjectedClasses();
 
   void addInjectedClass(@NonNull File file);

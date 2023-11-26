@@ -32,6 +32,8 @@ public class MockJavaModule extends ModuleImpl implements JavaModule {
   private final File mRootDir;
   private File mLambdaStubsJarFile;
   private File mBootstrapJarFile;
+  private File mDesugaringJarFile;
+  private File mDesugaringConfigFile;
 
   public MockJavaModule(File rootDir, FileManager fileManager) {
     super(rootDir);
@@ -146,6 +148,16 @@ public class MockJavaModule extends ModuleImpl implements JavaModule {
   @Override
   public File getBootstrapJarFile() {
     return mBootstrapJarFile;
+  }
+
+  @Override
+  public File getDesugaringJarFile() {
+    return mDesugaringJarFile;
+  }
+
+  @Override
+  public File getDesugaringConfigFile() {
+    return mDesugaringConfigFile;
   }
 
   @Override

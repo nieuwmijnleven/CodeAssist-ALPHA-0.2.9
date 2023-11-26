@@ -1,6 +1,7 @@
 package com.tyron.builder.compiler.incremental.dex;
 
 import android.util.Log;
+import com.android.tools.r8.StringResource;
 import com.android.tools.r8.CompilationMode;
 import com.android.tools.r8.D8;
 import com.android.tools.r8.D8Command;
@@ -115,7 +116,8 @@ public class IncrementalD8Task extends Task<AndroidModule> {
               .setMinApiLevel(getModule().getMinSdk())
               .setMode(CompilationMode.RELEASE)
               .setIntermediate(true)
-	      .setDisableDesugaring(true)
+	    //.setDisableDesugaring(true)
+	      .addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
               .setOutput(mOutputPath, OutputMode.DexFilePerClassFile)
               .build();
       D8.run(command);
@@ -144,7 +146,8 @@ public class IncrementalD8Task extends Task<AndroidModule> {
               .setMinApiLevel(getModule().getMinSdk())
               .setMode(CompilationMode.DEBUG)
               .setIntermediate(true)
-	      .setDisableDesugaring(true)
+	    //.setDisableDesugaring(true)
+	      .addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
               .setOutput(mOutputPath, OutputMode.DexFilePerClassFile)
               .build();
       D8.run(command);
@@ -165,7 +168,8 @@ public class IncrementalD8Task extends Task<AndroidModule> {
 
       File output = new File(getModule().getBuildDirectory(), "bin");
       builder.setMode(CompilationMode.DEBUG);
-      builder.setDisableDesugaring(true);
+      //builder.setDisableDesugaring(true);
+      builder.addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
       builder.setOutput(output.toPath(), OutputMode.DexIndexed);
       D8.run(builder.build());
 
@@ -185,7 +189,8 @@ public class IncrementalD8Task extends Task<AndroidModule> {
             .addProgramFiles(getLibraryDexes())
             .setMinApiLevel(getModule().getMinSdk())
             .setMode(CompilationMode.RELEASE)
-	    .setDisableDesugaring(true)
+	  //.setDisableDesugaring(true)
+	    .addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
             .setOutput(output.toPath(), OutputMode.DexIndexed)
             .build();
     D8.run(command);
@@ -267,7 +272,8 @@ public class IncrementalD8Task extends Task<AndroidModule> {
                   .addProgramFiles(lib.toPath())
                   .setMode(CompilationMode.RELEASE)
                   .setMinApiLevel(getModule().getMinSdk())
-	          .setDisableDesugaring(true)
+	        //.setDisableDesugaring(true)
+	          .addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
                   .setOutput(lib.getParentFile().toPath(), OutputMode.DexIndexed)
                   .build();
           D8.run(command);
@@ -280,12 +286,16 @@ public class IncrementalD8Task extends Task<AndroidModule> {
     List<Path> path = new ArrayList<>();
     path.add(getModule().getLambdaStubsJarFile().toPath());
     path.add(getModule().getBootstrapJarFile().toPath());
+    path.add(getModule().getDesugaringJarFile().toPath());
 
     Logger.log("-- getModule().getBootstrapJarFile()  --");
     Logger.log(getModule().getBootstrapJarFile().getAbsolutePath());
 
     Logger.log("-- getModule().getLambdaStubsJarFile()  --");
     Logger.log(getModule().getLambdaStubsJarFile().getAbsolutePath());
+
+    Logger.log("-- getModule().getDesugaringJarFile()  --");
+    Logger.log(getModule().getDesugaringJarFile().toString());
 
     return path;
   }

@@ -1,6 +1,7 @@
 package com.tyron.builder.compiler.dex;
 
 import com.android.tools.r8.CompilationMode;
+import com.android.tools.r8.StringResource;
 import com.android.tools.r8.D8;
 import com.android.tools.r8.D8Command;
 import com.android.tools.r8.OutputMode;
@@ -71,8 +72,9 @@ public class D8Task extends Task<JavaModule> {
               .addProgramFiles(
                   getClassFiles(new File(getModule().getBuildDirectory(), "bin/classes")))
               .addProgramFiles(libraryDexes)
-	      .setDisableDesugaring(true)
-              .setOutput(
+	    //.setDisableDesugaring(true)
+	      .addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
+	      .setOutput(
                   new File(getModule().getBuildDirectory(), "bin").toPath(), OutputMode.DexIndexed)
               .build();
       D8.run(command);
@@ -118,25 +120,30 @@ public class D8Task extends Task<JavaModule> {
                   .setMinApiLevel(getModule().getMinSdk())
                   .addProgramFiles(lib.toPath())
                   .setMode(CompilationMode.RELEASE)
-	          .setDisableDesugaring(true)
-                  .setOutput(lib.getParentFile().toPath(), OutputMode.DexIndexed)
+	        //.setDisableDesugaring(true)
+	          .addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
+                  .setOutput(lib.getParentFile().toPath(), OutputMode.DexInde7xed)
                   .build();
           D8.run(command);
         }
       }
-    }
+    }7
   }
 
   private List<Path> getLibraryFiles() {
     List<Path> path = new ArrayList<>();
     path.add(getModule().getBootstrapJarFile().toPath());
     path.add(getModule().getLambdaStubsJarFile().toPath());
+    path.add(getModule().getDesugaringJarFile().toPath());
 
     Logger.log("-- getModule().getBootstrapJarFile()  --");
     Logger.log(getModule().getBootstrapJarFile().toString());
 
     Logger.log("-- getModule().getLambdaStubsJarFile()  --");
     Logger.log(getModule().getLambdaStubsJarFile().toString());
+
+    Logger.log("-- getModule().getDesugaringJarFile()  --");
+    Logger.log(getModule().getDesugaringJarFile().toString());
 
     return path;
   }

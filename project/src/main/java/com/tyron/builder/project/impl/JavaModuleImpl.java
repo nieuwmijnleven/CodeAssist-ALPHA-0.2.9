@@ -220,6 +220,29 @@ public class JavaModuleImpl extends ModuleImpl implements JavaModule {
   }
 
   @Override
+  public File getDesugaringJarFile() {
+    try {
+      Method getDesugaredLib =
+          ReflectionUtil.getDeclaredMethod(
+              Class.forName("com.tyron.builder.BuildModule"), "getDesugaredLib");
+      return (File) getDesugaredLib.invoke(null);
+    } catch (Throwable e) {
+      throw new Error(e);
+    }
+  }
+
+  @Override
+  File getDesugaringConfigFile() {
+    try {
+      Method getDesugaredLibConfig = ReflectionUtil.getDeclaredMethod(
+          Class.forName("com.tyron.builder.BuildModule"), "getDesugaredLibConfig");
+      return (File)getDesugaredLibConfig.invoke(null);
+    } catch (Throwable e) {
+      throw new Error(e);
+    }
+  }
+
+  @Override
   public Map<String, File> getInjectedClasses() {
     return ImmutableMap.copyOf(mInjectedClassesMap);
   }
