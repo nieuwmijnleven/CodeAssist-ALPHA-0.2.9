@@ -50,7 +50,9 @@ public class BuildModule {
       sDesugaredLib = new File(context.getFilesDir(), "desugar_jdk_libs.jar");
       if (!sDesugaredLib.exists()) {
         Decompress.unzipFromAssets(
-            BuildModule.getContext(), "desugar_jdk_libs.zip", sDesugaredLib.getParentFile().getAbsolutePath());
+            BuildModule.getContext(),
+            "desugar_jdk_libs.zip",
+            sDesugaredLib.getParentFile().getAbsolutePath());
       }
     }
 
@@ -69,24 +71,24 @@ public class BuildModule {
         try (InputStream in = context.getAssets().open("desugar.json")) {
           Files.copy(in, sDesugaredLibConfig.toPath());
         } catch (IOException e) {
-	    throw new RuntimeException(e);
-	}
-      }
-
-      return sDesugaredLibConfig;
-    }
-
-    public static File getLambdaStubs() {
-      if (sLambdaStubs == null) {
-        sLambdaStubs = new File(BuildModule.getContext().getFilesDir(),
-                                "core-lambda-stubs.jar");
-
-        if (!sLambdaStubs.exists()) {
-          Decompress.unzipFromAssets(
-              BuildModule.getContext(), "lambda-stubs.zip",
-              sLambdaStubs.getParentFile().getAbsolutePath());
+          throw new RuntimeException(e);
         }
       }
-      return sLambdaStubs;
     }
+
+    return sDesugaredLibConfig;
   }
+
+  public static File getLambdaStubs() {
+    if (sLambdaStubs == null) {
+      sLambdaStubs = new File(BuildModule.getContext().getFilesDir(), "core-lambda-stubs.jar");
+      if (!sLambdaStubs.exists()) {
+        Decompress.unzipFromAssets(
+            BuildModule.getContext(),
+            "lambda-stubs.zip",
+            sLambdaStubs.getParentFile().getAbsolutePath());
+      }
+    }
+    return sLambdaStubs;
+  }
+}

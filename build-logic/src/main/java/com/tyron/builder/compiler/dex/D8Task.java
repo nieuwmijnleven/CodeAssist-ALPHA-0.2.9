@@ -73,9 +73,10 @@ public class D8Task extends Task<JavaModule> {
               .addProgramFiles(
                   getClassFiles(new File(getModule().getBuildDirectory(), "bin/classes")))
               .addProgramFiles(libraryDexes)
-	    //.setDisableDesugaring(true)
-	      .addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
-	      .setOutput(
+              // .setDisableDesugaring(true)
+              .addDesugaredLibraryConfiguration(
+                  readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
+              .setOutput(
                   new File(getModule().getBuildDirectory(), "bin").toPath(), OutputMode.DexIndexed)
               .build();
       D8.run(command);
@@ -121,14 +122,15 @@ public class D8Task extends Task<JavaModule> {
                   .setMinApiLevel(getModule().getMinSdk())
                   .addProgramFiles(lib.toPath())
                   .setMode(CompilationMode.RELEASE)
-	        //.setDisableDesugaring(true)
-	          .addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
-                  .setOutput(lib.getParentFile().toPath(), OutputMode.DexInde7xed)
+                  // .setDisableDesugaring(true)
+                  .addDesugaredLibraryConfiguration(
+                      readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
+                  .setOutput(lib.getParentFile().toPath(), OutputMode.DexIndexed)
                   .build();
           D8.run(command);
         }
       }
-    }7
+    }
   }
 
   private List<Path> getLibraryFiles() {
@@ -194,11 +196,11 @@ public class D8Task extends Task<JavaModule> {
     return paths;
   }
 
-    public static String readAllTextFromFile(Path path) {
-	try {
-	  return new String(files.readAllBytes(path, StandardCharsets.UTF_8);
-	} catch (IOException e) {
-	  throw new RuntimeException(e);
-	}
+  public static String readAllTextFromFile(Path path) {
+    try {
+      return new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
+  }
 }

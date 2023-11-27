@@ -232,11 +232,12 @@ public class JavaModuleImpl extends ModuleImpl implements JavaModule {
   }
 
   @Override
-  File getDesugaringConfigFile() {
+  public File getDesugaringConfigFile() {
     try {
-      Method getDesugaredLibConfig = ReflectionUtil.getDeclaredMethod(
-          Class.forName("com.tyron.builder.BuildModule"), "getDesugaredLibConfig");
-      return (File)getDesugaredLibConfig.invoke(null);
+      Method getDesugaredLibConfig =
+          ReflectionUtil.getDeclaredMethod(
+              Class.forName("com.tyron.builder.BuildModule"), "getDesugaredLibConfig");
+      return (File) getDesugaredLibConfig.invoke(null);
     } catch (Throwable e) {
       throw new Error(e);
     }
