@@ -59,7 +59,7 @@ public class BuildModule {
     return sDesugaredLib;
   }
 
-  public static File getDesugareLibConfig() {
+  public static File getDesugaredLibConfig() {
     if (sDesugaredLibConfig == null) {
       Context context = BuildModule.getContext();
       if (context == null) {
