@@ -239,7 +239,7 @@ public class JavaModuleImpl extends ModuleImpl implements JavaModule {
               Class.forName("com.tyron.builder.BuildModule"), "getDesugaredLibConfig");
       return (File) getDesugaredLibConfig.invoke(null);
     } catch (Throwable e) {
-f      throw new Error(e);
+      throw new Error(e);
     }
   }
 
