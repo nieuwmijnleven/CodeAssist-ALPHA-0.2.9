@@ -16,6 +16,8 @@ import com.tyron.builder.project.api.JavaModule;
 import com.tyron.common.util.Cache;
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -110,7 +112,8 @@ public class JavaD8Task extends Task<JavaModule> {
               .setMinApiLevel(getModule().getMinSdk())
               .setMode(CompilationMode.RELEASE)
               .setIntermediate(true)
-	      .setDisableDesugaring(true)
+	      //.setDisableDesugaring(true)
+	      .addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
               .setOutput(mOutputPath, OutputMode.DexFilePerClassFile)
               .build();
       D8.run(command);
@@ -139,7 +142,8 @@ public class JavaD8Task extends Task<JavaModule> {
               .setMinApiLevel(getModule().getMinSdk())
               .setMode(CompilationMode.DEBUG)
               .setIntermediate(true)
-	      .setDisableDesugaring(true)
+	      //.setDisableDesugaring(true)
+	      .addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
               .setOutput(mOutputPath, OutputMode.DexFilePerClassFile)
               .build();
       D8.run(command);
@@ -160,7 +164,8 @@ public class JavaD8Task extends Task<JavaModule> {
 
       File output = new File(getModule().getBuildDirectory(), "bin");
       builder.setMode(CompilationMode.DEBUG);
-      builder.setDisableDesugaring(true);
+      //builder.setDisableDesugaring(true);
+      builder.addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()));
       builder.setOutput(output.toPath(), OutputMode.DexIndexed);
       D8.run(builder.build());
 
@@ -182,7 +187,8 @@ public class JavaD8Task extends Task<JavaModule> {
             .addProgramFiles(getLibraryDexes())
             .setMinApiLevel(getModule().getMinSdk())
             .setMode(CompilationMode.RELEASE)
-	    .setDisableDesugaring(true)
+	    //.setDisableDesugaring(true)
+	    .addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
             .setOutput(output.toPath(), OutputMode.DexIndexed)
             .build();
     D8.run(command);
@@ -253,7 +259,8 @@ public class JavaD8Task extends Task<JavaModule> {
                   .setMinApiLevel(getModule().getMinSdk())
                   .addProgramFiles(lib.toPath())
                   .setMode(CompilationMode.RELEASE)
-	          .setDisableDesugaring(true)
+	           //.setDisableDesugaring(true)
+	          .addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
                   .setOutput(lib.getParentFile().toPath(), OutputMode.DexIndexed)
                   .build();
           D8.run(command);
@@ -304,5 +311,14 @@ public class JavaD8Task extends Task<JavaModule> {
       }
     }
     return files;
+  }
+
+  public static String readAllTextFromFile(Path path) {
+	try {
+	  return new String(files.readAllBytes(path, StandardCharsets.UTF_8);
+	} catch (IOException e) {
+	  throw new RuntimeException(e);
+	}
+    }
   }
 }

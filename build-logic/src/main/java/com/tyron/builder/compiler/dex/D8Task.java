@@ -1,7 +1,6 @@
 package com.tyron.builder.compiler.dex;
 
 import com.android.tools.r8.CompilationMode;
-import com.android.tools.r8.StringResource;
 import com.android.tools.r8.D8;
 import com.android.tools.r8.D8Command;
 import com.android.tools.r8.OutputMode;
@@ -15,6 +14,8 @@ import com.tyron.builder.project.api.AndroidModule;
 import com.tyron.builder.project.api.JavaModule;
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -73,7 +74,7 @@ public class D8Task extends Task<JavaModule> {
                   getClassFiles(new File(getModule().getBuildDirectory(), "bin/classes")))
               .addProgramFiles(libraryDexes)
 	    //.setDisableDesugaring(true)
-	      .addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
+	      .addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
 	      .setOutput(
                   new File(getModule().getBuildDirectory(), "bin").toPath(), OutputMode.DexIndexed)
               .build();
@@ -121,7 +122,7 @@ public class D8Task extends Task<JavaModule> {
                   .addProgramFiles(lib.toPath())
                   .setMode(CompilationMode.RELEASE)
 	        //.setDisableDesugaring(true)
-	          .addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
+	          .addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
                   .setOutput(lib.getParentFile().toPath(), OutputMode.DexInde7xed)
                   .build();
           D8.run(command);
@@ -192,4 +193,12 @@ public class D8Task extends Task<JavaModule> {
 
     return paths;
   }
+
+    public static String readAllTextFromFile(Path path) {
+	try {
+	  return new String(files.readAllBytes(path, StandardCharsets.UTF_8);
+	} catch (IOException e) {
+	  throw new RuntimeException(e);
+	}
+    }
 }

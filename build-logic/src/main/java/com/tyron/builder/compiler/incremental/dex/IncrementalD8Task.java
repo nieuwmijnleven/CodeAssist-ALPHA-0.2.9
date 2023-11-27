@@ -1,7 +1,6 @@
 package com.tyron.builder.compiler.incremental.dex;
 
 import android.util.Log;
-import com.android.tools.r8.StringResource;
 import com.android.tools.r8.CompilationMode;
 import com.android.tools.r8.D8;
 import com.android.tools.r8.D8Command;
@@ -21,6 +20,8 @@ import com.tyron.builder.project.cache.CacheHolder;
 import com.tyron.common.util.Cache;
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -117,7 +118,7 @@ public class IncrementalD8Task extends Task<AndroidModule> {
               .setMode(CompilationMode.RELEASE)
               .setIntermediate(true)
 	    //.setDisableDesugaring(true)
-	      .addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
+	      .addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
               .setOutput(mOutputPath, OutputMode.DexFilePerClassFile)
               .build();
       D8.run(command);
@@ -147,7 +148,7 @@ public class IncrementalD8Task extends Task<AndroidModule> {
               .setMode(CompilationMode.DEBUG)
               .setIntermediate(true)
 	    //.setDisableDesugaring(true)
-	      .addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
+	      .addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
               .setOutput(mOutputPath, OutputMode.DexFilePerClassFile)
               .build();
       D8.run(command);
@@ -169,7 +170,7 @@ public class IncrementalD8Task extends Task<AndroidModule> {
       File output = new File(getModule().getBuildDirectory(), "bin");
       builder.setMode(CompilationMode.DEBUG);
       //builder.setDisableDesugaring(true);
-      builder.addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
+      builder.addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
       builder.setOutput(output.toPath(), OutputMode.DexIndexed);
       D8.run(builder.build());
 
@@ -190,7 +191,7 @@ public class IncrementalD8Task extends Task<AndroidModule> {
             .setMinApiLevel(getModule().getMinSdk())
             .setMode(CompilationMode.RELEASE)
 	  //.setDisableDesugaring(true)
-	    .addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
+	    .addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
             .setOutput(output.toPath(), OutputMode.DexIndexed)
             .build();
     D8.run(command);
@@ -273,7 +274,7 @@ public class IncrementalD8Task extends Task<AndroidModule> {
                   .setMode(CompilationMode.RELEASE)
                   .setMinApiLevel(getModule().getMinSdk())
 	        //.setDisableDesugaring(true)
-	          .addDesugaredLibraryConfiguration(StringResource.fromFile(getModule().getDesugaringConfigFile().toPath()))
+	          .addDesugaredLibraryConfiguration(readAllTextFromFile(getModule().getDesugaringConfigFile().toPath()))
                   .setOutput(lib.getParentFile().toPath(), OutputMode.DexIndexed)
                   .build();
           D8.run(command);
@@ -339,5 +340,13 @@ public class IncrementalD8Task extends Task<AndroidModule> {
     files.forEach(path -> Logger.log(path.toAbsolutePath().toString()));
 
     return files;
+  }
+
+  public static String readAllTextFromFile(Path path) {
+    try {
+      return new String(files.readAllBytes(path, StandardCharsets.UTF_8);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 }
