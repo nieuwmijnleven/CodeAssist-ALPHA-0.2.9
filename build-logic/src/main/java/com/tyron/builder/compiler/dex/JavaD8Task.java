@@ -274,10 +274,22 @@ public class JavaD8Task extends Task<JavaModule> {
     }
   }
 
+  
   private List<Path> getLibraryFiles() {
     List<Path> path = new ArrayList<>();
-    path.add(getModule().getLambdaStubsJarFile().toPath());
     path.add(getModule().getBootstrapJarFile().toPath());
+    path.add(getModule().getLambdaStubsJarFile().toPath());
+    path.add(getModule().getDesugaringJarFile().toPath());
+
+    Logger.log("-- getModule().getBootstrapJarFile()  --");
+    Logger.log(getModule().getBootstrapJarFile().toString());
+
+    Logger.log("-- getModule().getLambdaStubsJarFile()  --");
+    Logger.log(getModule().getLambdaStubsJarFile().toString());
+
+    Logger.log("-- getModule().getDesugaringJarFile()  --");
+    Logger.log(getModule().getDesugaringJarFile().toString());
+
     return path;
   }
 

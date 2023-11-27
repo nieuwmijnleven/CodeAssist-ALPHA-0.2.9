@@ -180,6 +180,7 @@ public class IncrementalKotlinCompiler extends Task<AndroidModule> {
       args.setModuleName(getModule().getRootFile().getName());
       args.setNoReflect(true);
       args.setNoStdlib(true);
+      args.setJvmTarget("1.8");
       args.setSuppressWarnings(true);
       args.setJavaSourceRoots(
           javaSourceRoots.stream().map(File::getAbsolutePath).toArray(String[]::new));
