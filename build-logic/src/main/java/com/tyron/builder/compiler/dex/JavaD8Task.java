@@ -6,6 +6,7 @@ import com.android.tools.r8.D8;
 import com.android.tools.r8.D8Command;
 import com.android.tools.r8.DiagnosticsHandler;
 import com.android.tools.r8.OutputMode;
+import com.tyron.builder.Logger;
 import com.tyron.builder.compiler.BuildType;
 import com.tyron.builder.compiler.Task;
 import com.tyron.builder.compiler.incremental.dex.IncrementalD8Task;
@@ -274,7 +275,6 @@ public class JavaD8Task extends Task<JavaModule> {
     }
   }
 
-  
   private List<Path> getLibraryFiles() {
     List<Path> path = new ArrayList<>();
     path.add(getModule().getBootstrapJarFile().toPath());
