@@ -1026,7 +1026,7 @@ public class IncrementalAssembleLibraryTask extends Task<AndroidModule> {
       args.setNoReflect(true);
       args.setNoStdlib(true);
       args.setJvmTarget("1.8");
-      args.setJdkRelease("1.8");
+      // args.setJdkRelease("1.8");
       args.setSuppressWarnings(true);
       args.setJavaSourceRoots(
           javaSourceRoots.stream().map(File::getAbsolutePath).toArray(String[]::new));
@@ -1133,12 +1133,12 @@ public class IncrementalAssembleLibraryTask extends Task<AndroidModule> {
 
     List<String> options = new ArrayList<>();
     options.add("-proc:none");
-    options.add("--release");
-    options.add("8");
-    // options.add("-source");
-    // options.add("1.8");
-    // options.add("-target");
-    // options.add("1.8");
+    // options.add("--release");
+    // options.add("8");
+    options.add("-source");
+    options.add("1.8");
+    options.add("-target");
+    options.add("1.8");
     options.add("-Xlint:cast");
     options.add("-Xlint:deprecation");
     options.add("-Xlint:empty");

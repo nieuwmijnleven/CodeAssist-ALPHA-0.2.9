@@ -58,6 +58,11 @@ public class CleanTask extends Task<AndroidModule> {
     if (genDirectory.exists()) {
       FileUtils.deleteDirectory(genDirectory);
     }
+    
+    File kotlinDirectory = new File(getModule().getBuildDirectory(), "kotlin");
+    if (kotlinDirectory.exists()) {
+      FileUtils.deleteDirectory(kotlinDirectory);
+    }
 
     File intermediateDirectory = new File(getModule().getBuildDirectory(), "intermediate");
     if (intermediateDirectory.exists()) {
